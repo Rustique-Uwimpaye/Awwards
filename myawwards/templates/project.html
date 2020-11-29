@@ -7,7 +7,7 @@
     <div class="card">
         <div class="view overlay" style="background-image: url({{ post.photo.cdn_url }})">
             <img class="card-img-top" style="visibility:hidden" width="100%"
-                 src="{{ post.photo.cdn_url }}-/crop/1440x720/center/-/quality/lightest/" alt="{{photo.title}}">
+                src="{{ post.photo.cdn_url }}-/crop/1440x720/center/-/quality/lightest/" alt="{{photo.title}}">
             <a href="">
                 <div class="mask rgba-black-slight">
                     <div class="container">
@@ -37,8 +37,9 @@
         </div>
         <div class="card-body">
             <h5 class="card-title"><strong>{{post.title|title}}</strong>
-                <a href="{{ post.url }}" style="float:right" class="btn btn-sm btn-info mr-4"> Visit </a></h5>
-            <p>by <span><a href="{% url 'userprofile' post.user.username %}" id="username" class="mr-2">{{ post.user.username|title }}</a></span>({{post.user.profile.location}})
+                <a href="{{ post.url }}" style="float:left" class="btn btn-sm btn-info mr-4"> Visit </a></h5>
+            <p>by <span><a href="{% url 'userprofile' post.user.username %}" id="username"
+                        class="mr-2">{{ post.user.username|title }}</a></span>({{post.user.profile.location}})
             </p>
             <p>{{ post.description }}</p>
             <hr>
@@ -51,16 +52,20 @@
                     <h3 class="D-block mx-auto">Ratings Scores</h3>
                     {% for rating in post.ratings.all %}
                     {% if forloop.counter is post.ratings.all.count %}
-                    <a class="btn btn-info btn-sm" ><h5>{{ rating.score }}</h5>
+                    <a class="btn btn-info btn-sm">
+                        <h5>{{ rating.score }}</h5>
                         <span class="sc">Average Score</span>
                     </a>
-                    <a class="btn btn-outline-success btn-sm" ><h5>{{ rating.design_average }}</h5>
+                    <a class="btn btn-outline-success btn-sm">
+                        <h5>{{ rating.design_average }}</h5>
                         <span class="sc">Design Average</span>
                     </a>
-                    <a class="btn btn-outline-primary btn-sm" id="u"><h5>{{ rating.usability_average }}</h5>
+                    <a class="btn btn-outline-primary btn-sm" id="u">
+                        <h5>{{ rating.usability_average }}</h5>
                         <span class="sc">Usability Average</span>
                     </a>
-                    <a class="btn btn-outline-danger btn-sm" id="c"><h5>{{ rating.content_average }}</h5>
+                    <a class="btn btn-outline-danger btn-sm" id="c">
+                        <h5>{{ rating.content_average }}</h5>
                         <span class="sc">Content Average</span>
                     </a>
                     {% endif %}
