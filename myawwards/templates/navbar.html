@@ -1,7 +1,7 @@
 {% load crispy_forms_tags %}
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" id="rustique">
     <div class="container">
-        <a class="navbar-brand" href="{% url 'index' %}"> <strong class="mr-4 brand">LeRustique Awwards</strong></a>
+        <a class="navbar-brand" href="{% url 'index' %}"> <strong class="mr-4 brand"> LeRustique Awwards</strong></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -9,7 +9,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <form class="form-inline" method="get" action="{% url 'search' %}">
+                    <form class="form-inline " method="get" action="{% url 'search' %}">
                         {% csrf_token %}
                         <div class="md-form my-0">
                             <input class="form-control mr-sm-2 " type="text" placeholder="Search" name="title"
@@ -21,12 +21,12 @@
 
             <ul class="navbar-nav navbar-right">
                 {% if user.is_authenticated%}
-                <li class="nav-item dropdown">
+                <li class="nav-item dropleft">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">{{ user.username|title }} <img
                             class="rounded-circle nav-img" src="{{ user.profile.profile_picture.url }}" alt="">
                     </a>
-                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                    <div class="dropdown-menu dropdown-dark" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item text-center" href="{% url 'profile' user.username %}">Profile</a>
                         <hr>
                         <a class="dropdown-item text-center" href="{% url 'edit' user.username  %}"> Edit profile</a>
@@ -35,10 +35,11 @@
                     </div>
                 </li>
                 {% else %}
-                <a href="{% url 'login' %}" class="login btn btn-sm btn-info"> REGISTER/LOGIN </a>
+                <a href="{% url 'login' %}" class="login btn btn-sm btn-dark"> REGISTER/LOGIN </a>
                 {% endif %}
-                <button class="btn btn-dark btn-sm" id="site" data-toggle="modal" data-target=".bd-example-modal-xl">
-                    Submit your website
+                <button class="btn btn-info btn-sm btn-dark" id="site" data-toggle="modal"
+                    data-target=".bd-example-modal-xl">
+                    Submit your site
                 </button>
             </ul>
         </div>
