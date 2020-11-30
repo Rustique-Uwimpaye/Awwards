@@ -14,7 +14,7 @@ This project allows users to post their projects for other users to rate accordi
   
 ## Screenshots 
 
-
+![Screenshot from 2020-11-30 14-21-19](https://user-images.githubusercontent.com/68597043/100606303-484b6900-331a-11eb-9ce3-935dda9b9d38.png)
  
 ## User Story  
   
